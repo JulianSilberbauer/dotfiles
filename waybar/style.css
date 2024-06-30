@@ -1,0 +1,122 @@
+* * {
+    font-family: IosevkaNerdFont;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#waybar {
+    background: #2E3340;
+    border: none;
+}
+
+button {
+    background: none;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: none;
+    color: #C8C093;
+    border: none;
+}
+
+#workspaces button:hover {
+    color: rgba(196,57,41,0.75);
+}
+
+#workspaces button.active {
+    color: #A54242;
+}
+
+.modules-left {
+    margin-left: 10px;
+}
+
+.modules-right > widget > * {
+    /* margin-right: 5px; */
+    padding: 0 5px;
+    font-size: 15px;
+}
+
+.modules-right > widget:last-child > * {
+    margin-right: 10px;
+}
+
+#clock {
+    color: #C8C093;
+    font-size: 15px;
+}
+
+#idle_inhibitor {
+    color: #7c6f64;
+}
+
+#idle_inhibitor.activated {
+    color: #928374;
+}
+
+#bluetooth {
+    font-size: 16px;
+    color: #C8C093;
+}
+
+#pulseaudio {
+    color: #d65d0e;
+}
+
+#network {
+    color: #C8C093;
+}
+
+#network.disconnected {
+    background-color: #C34043;
+}
+
+#backlight {
+    color: #C8C093;
+}
+
+#cpu {
+    color: #C8C093;
+}
+
+#memory {
+    color: #C8C093;
+}
+
+#temperature {
+    color: #C8C093;
+}
+
+#temperature.critical {
+    background-color: #C34043;
+}
+
+#battery {
+    color: #C8C093;
+}
+
+#battery.charging, #battery.plugged {
+    color: #76946A;
+}
+
+#battery.critical:not(.charging) {
+    color: #C34043;
+    animation-name: blink;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        color: #fb3934;
+    }
+}
+
+#custom-powermenu {
+    color: #83a598;
+    font-size: 18px;
+}
+

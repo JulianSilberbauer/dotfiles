@@ -1,0 +1,48 @@
+{
+    "layer": "top", // Waybar at top layer
+    "height": 30, // Waybar height (to be removed for auto height)
+    "spacing": 8, // Gaps between modules (4px)
+    
+    "modules-left": ["sway/workspaces"], 
+    "modules-center": ["clock"],
+    "modules-right": ["network", "cpu", "memory", "temperature"],
+
+    "sway/workspaces": {
+	    "disable-scroll": true,
+	    "all_outputs": true,
+	    "format": "{name}: {icon}",
+	    "format-icons": {
+	    	"default": " ",
+	    	"focused": " "
+    	}
+    },
+
+    "clock": {
+
+    },
+
+    "network": {
+        "interval": 5,
+        "format-ethernet": "󰈀  {ifname}:  {bandwidthDownBytes}  {bandwidthUpBytes}",
+        "format-ethernet": "  {ifname}:  {bandwidthDownBytes}  {bandwidthUpBytes}",
+        "format-disconnected": "󰞃 Disconnected"
+    },
+
+    "cpu": {
+        "interval": 5,
+       "format": "  {usage}%",
+       "states": {
+            "low": 25,
+            "medium": 50,
+            "high": 75
+       }
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": "  {percentage}%, {used}GB/{total}GB"
+    }
+
+
+}
+
