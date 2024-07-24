@@ -2,36 +2,114 @@
     "layer": "top", // Waybar at top layer
     "height": 30, // Waybar height (to be removed for auto height)
     "spacing": 8, // Gaps between modules (4px)
+    "position": "bottom",
     
-    "modules-left": ["sway/workspaces"], 
+    "modules-left": [
+        "custom/firefox", 
+        "custom/obsidian",
+        "custom/nautilus",
+        "custom/steam",
+        "custom/pavucontrol",
+        "custom/pycharm",
+        "custom/remmina",
+        "hyprland/workspaces"
+    ], 
     "modules-center": ["clock"],
     "modules-right": ["network", "cpu", "memory", "temperature"],
 
-    "sway/workspaces": {
+    "hyprland/workspaces": {
 	    "disable-scroll": true,
 	    "all_outputs": true,
-	    "format": "{name}: {icon}",
+	    "format": "{icon}",
 	    "format-icons": {
-	    	"default": " ",
-	    	"focused": " "
+	    	"1": "󰎤 ",
+	    	"2": "󰎧 ",
+            "3": "󰎪 ",
+            "4": "󰎭 ",
+            "5": "󰎱 "
     	}
     },
 
-    "clock": {
+    "custom/firefox": {
+        "format": "󰈹 ",
+        "tooltip": false,
+        "on-click": "firefox"
+    }, 
 
+    "custom/obsidian": {
+        "format": "󰠮 ",
+        "tooltip": false,
+        "on-click": "obsidian"
+    },
+
+    "custom/nautilus": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "nautilus"
+    },
+
+    "custom/pavucontrol": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "pavucontrol"
+    },
+
+    "custom/steam": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "steam"
+    },
+
+    "custom/pycharm": {
+        "format": " ",
+        "tooltip": true,
+        "tooltip-format": "pycharm",
+        "on-click": "pycharm"
+    },
+
+    "custom/remmina": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "remmina"
+    },
+
+    "clock": {
+        "format": "  {:%H:%M}",
+        "format-alt": "{:%A, %B %d, %Y (%R)}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "month",
+                    "mode-mon-col"  : 2,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#dcd7ba'><b>{}</b></span>",
+                              "weeks":      "<span color='#6a9589'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#c34043'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
     },
 
     "network": {
         "interval": 5,
         "format-ethernet": "󰈀  {ifname}:  {bandwidthDownBytes}  {bandwidthUpBytes}",
-        "format-ethernet": "  {ifname}:  {bandwidthDownBytes}  {bandwidthUpBytes}",
+        "format-wifi": "  {ifname}:  {bandwidthDownBytes}  {bandwidthUpBytes}",
         "format-disconnected": "󰞃 Disconnected"
     },
 
     "cpu": {
         "interval": 5,
-       "format": "  {usage}%",
-       "states": {
+        "format": "  {usage}%",
+        "states": {
             "low": 25,
             "medium": 50,
             "high": 75
@@ -41,8 +119,12 @@
     "memory": {
         "interval": 5,
         "format": "  {percentage}%, {used}GB/{total}GB"
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "  {temperatureC} °C",
+        "format-critical": "󰈸 {temperatureC} °C"
     }
-
-
 }
 
