@@ -7,6 +7,7 @@
     "modules-left": [
         "custom/firefox", 
         "custom/obsidian",
+        "custom/signal",
         "custom/nautilus",
         "custom/steam",
         "custom/pavucontrol",
@@ -73,6 +74,12 @@
         "on-click": "remmina"
     },
 
+    "custom/signal": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "signal-desktop"
+    },
+
     "clock": {
         "format": "  {:%H:%M}",
         "format-alt": "{:%A, %B %d, %Y (%R)}",
@@ -102,7 +109,7 @@
     "network": {
         "interval": 5,
         "format-ethernet": "󰈀  {ifname}:  {bandwidthDownBytes}  {bandwidthUpBytes}",
-        "format-wifi": "  {ifname}:  {bandwidthDownBytes}  {bandwidthUpBytes}",
+        "format-wifi": "  {essid}: {frequency} |  {bandwidthDownBytes}  {bandwidthUpBytes}",
         "format-disconnected": "󰞃 Disconnected"
     },
 
