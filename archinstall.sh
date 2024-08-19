@@ -28,7 +28,7 @@ echo "## Installing Essentials ##"
 pacman -S --needed --noconfirm git wget man-db unzip 
 
 echo "## Installing Desktop Environment ##"
-pacman -S --needed --noconfirm sway swaylock swayidle swaybg swaync waybar
+pacman -S --needed --noconfirm waybar hyprland hyprpaper
 
 echo "## Audio Stuff ##"
 pacman -S --needed --noconfirm pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse pavucontrol
@@ -37,7 +37,7 @@ echo "## Installing useful Programs"
 pacman -S --needed --noconfirm firefox foot gimp vlc nautilus evince loupe libreoffice-fresh
 
 echo "## Programming Utils and Languages"
-pacman -S --needed --noconfirm stow python clang cmake make neovim neofetch htop
+pacman -S --needed --noconfirm stow python clang cmake make neovim fastfetch htop
 
 echo "## AUR ##"
 sudo -u julian git clone https://aur.archlinux.org/yay.git
